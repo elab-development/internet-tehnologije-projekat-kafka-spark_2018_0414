@@ -15,6 +15,7 @@ class ClimateData(models.Model):
     city = models.ForeignKey(City, on_delete=models.CASCADE)
     year = models.IntegerField()
     temperature = models.FloatField()
-    pollution_level = models.FloatField()
+    pollution_level = models.FloatField(null=True)
+    rain = models.FloatField
     
     
