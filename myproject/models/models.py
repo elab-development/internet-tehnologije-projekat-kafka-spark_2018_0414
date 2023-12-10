@@ -1,9 +1,13 @@
 from django.db import models
 
 # Create your models here.
-class State(models.Model):
+class Country(models.Model):
     name = models.CharField(max_length=100)
 
+
+class State(models.Model):
+    name = models.CharField(max_length=100)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, null = True)
 
 
 class City(models.Model):
@@ -16,6 +20,6 @@ class ClimateData(models.Model):
     year = models.IntegerField()
     temperature = models.FloatField()
     pollution_level = models.FloatField(null=True)
-    rain = models.FloatField
+    
     
     
